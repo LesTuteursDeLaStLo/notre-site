@@ -1,0 +1,10 @@
+key = sb_publishable_f-YKK4tPJK77y0tVI67urw_2o0ojeWj
+
+url=https://apzwctvjunasumqbuyxi.supabase.co
+
+connection string= postgresql://postgres:[YOUR-PASSWORD]@db.apzwctvjunasumqbuyxi.supabase.co:5432/postgres
+
+
+CLI setup = supabase login
+supabase init
+supabase link --project-ref apzwctvjunasumqbuyxi
