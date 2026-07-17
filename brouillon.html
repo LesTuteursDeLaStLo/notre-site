@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+ <html>
+    <head></head>
+    <body>
+          <input type="radio" id="tab1" name="onglets" checked>
+  <input type="radio" id="tab2" name="onglets">
+  <input type="radio" id="tab3" name="onglets">
+ <nav class="barre-onglets">
+    <label for="tab1">Accueil</label>
+    <label for="tab2">Profil</label>
+    <label for="tab3">Paramètres</label>
+  </nav>
+
+   <div class="contenu-onglets">
+    <div id="contenu1" class="contenu">Contenu de l'Accueil...</div>
+    <div id="contenu2" class="contenu">Contenu du Profil...</div>
+    <div id="contenu3" class="contenu">Contenu des Paramètres...</div>
+  </div>
+  <style>/* 1. On cache les vrais boutons radio */
+input[type="radio"] {
+  display: none;
+}
+
+/* 2. Style de la barre d'onglets */
+.barre-onglets {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+}
+
+.barre-onglets label {
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  margin-right: 5px;
+  border-radius: 5px 5px 0 0;
+}
+
+.barre-onglets label:hover {
+  background: #ddd;
+}
+
+/* 3. Style du contenu (caché par défaut) */
+.contenu {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* 4. LA MAGIE CSS : Si la radio 1 est cochée, on affiche le contenu 1 et on colore l'onglet 1 */
+#tab1:checked ~ .barre-onglets label[for="tab1"],
+#tab2:checked ~ .barre-onglets label[for="tab2"],
+#tab3:checked ~ .barre-onglets label[for="tab3"] {
+  background: #04AA6D;
+  color: white;
+}
+
+#tab1:checked ~ .contenu-onglets #contenu1,
+#tab2:checked ~ .contenu-onglets #contenu2,
+#tab3:checked ~ .contenu-onglets #contenu3 {
+  display: block;
+}
+</style>
+  </body>
+ </html>
+ 
+ 
+               <input type="radio" id="tab1" name="onglets" checked>
+                <input type="radio" id="tab2" name="onglets">
+                <input type="radio" id="tab3" name="onglets">
+                <input type="radio" id="tab4" name="onglets">
+                <input type="radio" id="tab5" name="onglets">
+ <nav class="barre-onglets">
+    <label for="tab1">General</label>
+    <label for="tab2">A propos de nous</label>
+    <label for="tab3">Nos Projets</label>
+    <label for="tab4">Paramètres</label>
+    <label for="tab4">Pour les modérateurs</label>
+  </nav>
+        </header>
+        <section id="onglet-1">
