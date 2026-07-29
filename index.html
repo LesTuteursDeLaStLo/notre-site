@@ -29,9 +29,11 @@
       </table>
     </nav>
         </header>
-
-      <iframe style="width:100%" id="affichage-contenu" src="main.html"></iframe>
-        
+<div>
+      <iframe style="width:100%" id="affichage-contenu" onload="redimensionnerIframe(this)" src="main.html"></iframe>
+		<script> function redimensionnerIframe(iframe) {
+  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';}</script>
+</div>
         <footer>
 
         </footer>
