@@ -17,11 +17,20 @@ body {
 table{
     table-layout:fixed; 
     width: 100%;
+        border-collapse: collapse;
 }
 
 #tabs td{
     width:auto;
     text-align: center;
+    
+}
+.tab{
+    border:solid;
+
+}
+.actif{
+    border-bottom:none;
 }
 iframe{
     width:100%;
