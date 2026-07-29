@@ -1,5 +1,15 @@
-html{}
+#wrap-content{
+    width: 90%;
+    align-items: center;
+}
+table{
+    table-layout:fixed; 
+    width: 100%;
+}
 
+td{
+    width:auto;
+}
 iframe{
     width:100%;
 }
