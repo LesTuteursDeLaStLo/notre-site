@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Les tuteurs de la St-Lo</title>
         <link rel="stylesheet" href="tuteurscsl.css">
-        <script src="https://jsdelivr.net"></script>
+        <!--script src="https://jsdelivr.net"></script-->
 
     </head>
 
@@ -29,9 +29,11 @@
         </header>
 
         <main id="onglet-1">
-			<article id="revendications">
+			<article>
 			<h2> Nos revendications: </h2>
-			      <script src="tuteurscsl.js"></script>
+			      
+                  <ol id="revendications"></ol>
+                  <script src="tuteurscsl.js"></script>
 			</article>
 			
             
@@ -46,12 +48,12 @@
                  <fieldset id="commentaire">
                     <input type="text" id="pseudo" placeholder="Votre pseudonyme">
                     <input type="text" id="faculte" placeholder="Votre faculté (facultatif)">
-                    <textarea id="commentaire" placeholder="Laissez ici votre commentaire. Veuillez noter que nous ne tolerons pas les propos racistes et fachos"></textarea>
-                    <button onclick="publication()"></button>
+                    <textarea id="contenuCommentaire" placeholder="Laissez ici votre commentaire. Veuillez noter que nous ne tolerons pas les propos racistes et fachos"></textarea>
+                    <button onclick="PostComment()">Publier</button>
                  </fieldset>
                 </footer>
 
-                <script  src="commentaires.js"></script>
+                <!--script  src="commentaires.js"></script-->
             </article>
            
           
