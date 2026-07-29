@@ -1,3 +1,15 @@
+body {
+  display: flex;
+  flex-direction: column;   /* Aligne les éléments du haut vers le bas */
+  justify-content: center; /* Centre verticalement */
+  align-items: center;     /* Centre horizontalement */
+  min-height: 100vh;       /* Force la page à faire 100% de la hauteur de l'écran */
+  margin: 0;               /* Supprime les marges par défaut du navigateur */
+}
+
+
+
+
 #wrap-content{
     width: 90%;
     align-items: center;
@@ -7,14 +19,43 @@ table{
     width: 100%;
 }
 
-td{
+#tabs td{
     width:auto;
+    text-align: center;
 }
 iframe{
     width:100%;
+  
+}
+main{
+      text-align: center;
 }
 
 #header{
     width:100%;
     height: 2in;
+    float:left;
+}
+
+#logo{
+    max-height: 2in;
+
+}
+.left{
+width: 25%;
+text-align: center;
+}
+.center{
+    width:50%;
+}
+.right{
+    width: 25%;
+text-align: center;
+}
+/*table{
+    float:left;
+}*/
+
+h1{
+    font-size:300%;
 }
