@@ -35,7 +35,7 @@ const supabase = createClient(URL,API);
 
 //Affichage des revendications
 const listeRevendications = document.getElementById("revendications");
-const filtreAntiFacho = await supabase.from('banned words').select('*');
+//const filtreAntiFacho = await supabase.from('banned words').select('*');
 const {data: Revendications, error} = await supabase.from('Revendications').select('*');
 Revendications.forEach((line)=> {
   let element=document.createElement("li");
@@ -44,8 +44,9 @@ Revendications.forEach((line)=> {
 });
 
 //Affichage des commentaires
+//function errorCommentaires(){return;}
 const listeCommentaires = document.getElementById("commentaires");
-const {data: Commentaires, error} = await supabase.from('Commentaires').select('*');
+const {data: Commentaires, error: errorCommentaires} = await supabase.from('Commentaires').select('*');
 Commentaires.forEach((line)=> {
   let section=document.createElement("section");
   let personne = document.createElement("table");

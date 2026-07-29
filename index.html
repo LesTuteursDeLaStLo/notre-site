@@ -16,58 +16,28 @@
             <header> 
                     <!-- Barre d'onglets commune -->
     <nav class="barre-onglets">
-      <ul>
+      <table>
+        <tr>
         <!-- L'onglet actif pointe vers la route principale / -->
-        <li><a href="index.html" class="actif">General</a></li>
+        <td onclick="changerTab('main.html',this)" class="tab actif">General</td><!--a href="index.html" class="actif">General</a></li-->
         <!-- L'onglet Modération pointe vers la route /moderation -->
-        <li><a href="aboutus.html"> A propos de nous</a></li>
-        <li><a href="nosprojets.html">Nos Projets</a></li>
-        <li><a href="parametres.html">Parametres</a></li>
-        <li><a href="/moderation">Pour les moderateurs</a></li>
-      </ul>
+        <td onclick="changerTab('aboutus.html',this)" class="tab">A propos de nous</td><!--a href="aboutus.html"> A propos de nous</a></li-->
+        <td onclick="changerTab('nosprojets.html',this)" class="tab">Nos projets</td><!--a href="nosprojets.html">Nos Projets</a></li-->
+        <td onclick="changerTab('parametres.html',this)" class="tab">Parametres</td><!--a href="parametres.html">Parametres</a></li-->
+        <td onclick="changerTab('/moderation/moderation.html',this)" class="tab">Pour les moderateurs</td><!--a href="/moderation">Pour les moderateurs</a></li-->
+        </tr>
+      </table>
     </nav>
         </header>
 
-        <main id="onglet-1">
-			<article>
-			<h2> Nos revendications: </h2>
-			      
-                  <ol id="revendications"></ol>
-                  <script src="tuteurscsl.js"></script>
-			</article>
-			
-            
-            <article id="forum">
-                <header>
-                <h2> Vos Commentaires et Suggestions</h2>
-                </header>
-                <section id="commentaires">
-
-                </section>
-                <footer>
-                 <fieldset id="commentaire">
-                    <input type="text" id="pseudo" placeholder="Votre pseudonyme">
-                    <input type="text" id="faculte" placeholder="Votre faculté (facultatif)">
-                    <textarea id="contenuCommentaire" placeholder="Laissez ici votre commentaire. Veuillez noter que nous ne tolerons pas les propos racistes et fachos"></textarea>
-                    <button onclick="PostComment()">Publier</button>
-                 </fieldset>
-                </footer>
-
-                <!--script  src="commentaires.js"></script-->
-            </article>
-           
-          
-
-        </main>
-        </article>
+      <iframe style="width:100%" id="affichage-contenu" src="main.html"></iframe>
+        
         <footer>
 
         </footer>
-        <article>
-
-        </article>
+     
 
   
-        
+     <script src="main.js"></script>   
     </body>
 </html>
