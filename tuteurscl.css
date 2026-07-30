@@ -1,14 +1,38 @@
-body {
-  display: flex;
-  flex-direction: column;   /* Aligne les éléments du haut vers le bas */
-  justify-content: center; /* Centre verticalement */
-  align-items: center;     /* Centre horizontalement */
-  min-height: 100vh;       /* Force la page à faire 100% de la hauteur de l'écran */
-  margin: 0;               /* Supprime les marges par défaut du navigateur */
+:root{
+    --font: 
+}
+.monospace{
+    font-family: 'Courier New condensed', Courier, monospace
 }
 
 
+body {
+  display: flex;
+  flex-direction: column;   /* Aligne les éléments du haut vers le bas */
+  /*justify-content: center; /* Centre verticalement */
+  align-items: center;     /* Centre horizontalement */
+  min-height: 100vh;       /* Force la page à faire 100% de la hauteur de l'écran */
+  margin: 0;               /* Supprime les marges par défaut du navigateur */
+    background-color: burlywood;
+    padding-left:20px;
+    padding-right:20px;
+    font-family: 'Courier New condensed', Courier, monospace;
+    
+}
 
+fieldset{
+    height:2in;
+    float:left;
+    display: flex;
+    flex-direction:column;
+    width:90%;
+    align-items : center;
+}
+textarea{
+    width:100%;
+    height:fit-content;
+      flex-grow: 1;
+}
 
 #wrap-content{
     width: 90%;
@@ -19,7 +43,11 @@ table{
     width: 100%;
         border-collapse: collapse;
 }
-
+#header{
+    background-color: darkred;
+    margin:20px;
+    padding:20px;
+}
 #tabs td{
     width:auto;
     text-align: center;
@@ -34,7 +62,8 @@ table{
 }
 iframe{
     width:100%;
-  
+    border: solid;
+    border-top:none;
 }
 main{
       text-align: center;
@@ -46,19 +75,22 @@ main{
     float:left;
 }
 
-#logo{
+.logo{
     max-height: 2in;
+    box-shadow:inset 0 0 10px black, 0 0 15px #400000;
+    border: solid 5px #500000;
 
 }
 .left{
-width: 25%;
+width: 24%;
 text-align: center;
 }
 .center{
-    width:50%;
+    width:52%;
+    text-align:center;
 }
 .right{
-    width: 25%;
+    width: 24%;
 text-align: center;
 }
 /*table{
@@ -67,4 +99,8 @@ text-align: center;
 
 h1{
     font-size:300%;
+    color:beige;
+    text-shadow: 0 0 5px #400000;
+    white-space: nowrap; 
+   
 }
