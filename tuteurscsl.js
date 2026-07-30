@@ -91,11 +91,19 @@ if (bouton) {
 */
 // On récupère Supabase depuis l'objet global du navigateur
 // Récupération sécurisée du client Supabase
-const createClient = window.supabase.createClient;
+/*const createClient = window.supabase.createClient;
 
-const URL = 'https://apzwctvjunasumqbuyxi.supabase.co';
-const API = 'sb_publishable_f-YKK4tPJK77y0tVI67urw_2o0ojeWj';
-const supabaseClient = createClient(URL, API);
+const URL = 'https://apzwctvjunasumqbuyxi.supabase.co/'.trim();
+const API = 'sb_publishable_f-YKK4tPJK77y0tVI67urw_2o0ojeWj'.trim();
+console.log("Tentative d'initialisation avec l'URL :", URL);
+const supabaseClient = createClient(URL, API);*/
+// Initialisation directe sans déstructuration intermédiaire
+const supabaseClient = window.supabase.createClient(
+  'https://apzwctvjunasumqbuyxi.supabase.co/', 
+  'sb_publishable_f-YKK4tPJK77y0tVI67urw_2o0ojeWj'
+);
+
+
 
 async function chargerDonnees() {
   try {
