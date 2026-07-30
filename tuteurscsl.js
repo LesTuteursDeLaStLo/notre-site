@@ -136,6 +136,7 @@ async function chargerDonnees() {
           const label = document.createElement("td");
           
           label.innerHTML = `Pseudonyme: <br>Faculté: `;
+          label.style="text-align:right"
           tr.appendChild(label);
           
           const id = document.createElement("td");
@@ -144,13 +145,14 @@ async function chargerDonnees() {
           
           tbody.appendChild(tr);
           personne.appendChild(tbody);
-          
+         personne.className="info-commentaire";
           let commentaire = document.createElement("p");
           commentaire.className = "comments";
           commentaire.textContent = line.commentaire;
           
           section.appendChild(personne);
           section.appendChild(commentaire);
+          section.className = "section-comment"
           listeCommentaires.appendChild(section);
         });
       }
@@ -158,6 +160,11 @@ async function chargerDonnees() {
   } catch (err) {
     console.error("Erreur de chargement :", err);
   }
+     const iframeParente = window.parent.document.getElementById("affichage-contenu");
+    
+   
+      // On lui transmet la hauteur exacte du contenu bien réel et chargé
+      iframeParente.style.height = document.documentElement.scrollHeight + 'px';
 }
 
 // Fonction d'envoi de commentaire
@@ -187,6 +194,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const bouton = document.getElementById("btn-publier");
   if (bouton) {
     bouton.addEventListener("click", PostComment);
+    
+     const iframeParente = window.parent.document.getElementById("affichage-contenu");
+    
+   
+      // On lui transmet la hauteur exacte du contenu bien réel et chargé
+      iframeParente.style.height = document.documentElement.scrollHeight + 'px';
   }
 });
 

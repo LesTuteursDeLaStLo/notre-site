@@ -19,7 +19,14 @@ body {
     font-family: 'Courier New condensed', Courier, monospace;
     
 }
-
+#commentaires{
+     display: flex;
+    flex-direction: column;   /* Force chaque bloc de commentaire à aller à la ligne */
+    align-items: stretch;     /* Permet aux lignes d'occuper toute la largeur disponible */
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
 #commentaire{
     height:2in;
     float:left;
@@ -113,4 +120,37 @@ h1{
     text-shadow: 0 0 5px #400000;
     white-space: nowrap; 
    
+}
+
+#footer{
+    background-color: rgb(247, 241, 235);
+    height: 2in;
+    width: 100vw;
+    margin-top:40px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.commentaire{
+    display:flex;
+    flex-direction:row;
+}
+.comments{
+ width: 75%;              /* Prend le reste de la place (3 quarts) */
+    margin: 0;               /* Supprime les marges par défaut */
+    padding: 10px;      /* Crée un espace pour que le texte ne colle pas aux infos */
+    word-break: break-word;  /* Force les longs mots à se couper pour ne pas déborder */
+    text-align:justify;
+    background-color: beige;
+    border: solid 1px;
+}
+.info-commentaire{
+      flex-shrink: 0;    
+    width: 25%;
+}
+.section-comment{
+        display: flex !important;
+    flex-direction: row !important;
+    width: 100%;
+    margin-bottom: 30px;    
 }
