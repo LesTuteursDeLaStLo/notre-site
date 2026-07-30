@@ -20,7 +20,7 @@ body {
     
 }
 
-fieldset{
+#commentaire{
     height:2in;
     float:left;
     display: flex;
