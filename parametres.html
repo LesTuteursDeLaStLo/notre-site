@@ -2,19 +2,24 @@
     <link rel="stylesheet" href="tuteurscl.css"> 
     <h2>PAS ENCORE FONCTIONNEL</h2>
     <label for="font">Police de texte (et non la SPVM):</label>
-    <select id="font">
-        <option> Times New Roman</option>
+    <select id="font" onchange="font(this)">
         <option> Courier New Monospace</option>
-
+        <option> Times New Roman</option>
+    </select>
+    
+    <label for="theme">Choisis ton thème :</label>
+    <select id="theme" onchange="darktheme(this)">
+        <option>Clair (comme la physique quantique après la séance du tutorat)</option>
+        <option>Sombre (comme tes pensees face aux examens finaux)</option>
     </select>
     <fieldset>
         <legend> Particularites texte</legend>
         <label for="bold">Gras: </label>
-        <input type="checkbox" id="bold" onclick="">
-        <label for="italic">Italique: </label><input type="checkbox" onclick="">
-        <label for="underline">Souligne: </label><input type="checkbox" onclick="">
-        <label for="markup">Surligne: </label><input type="checkbox" onclick="">
-        <label for="caps">MAJUSCULE: </label><input type="checkbox" onclick="">
+        <input type="checkbox" id="bold" onclick="bold(this)">
+        <label for="italic">Italique: </label><input type="checkbox" id="italic" onclick="italic(this)">
+        <label for="underline">Souligné: </label><input type="checkbox" id="underline" onclick="underline(this)">
+        <label for="markup">Surligné: </label><input type="checkbox" id="markup" onclick="markup(this)">
+        <label for="caps">MAJUSCULE: </label><input type="checkbox" id="caps" onclick="capsLock(this)">
         <label>Un ptit antistress, ce bouton ne fait rien :) </label><input type="checkbox" onclick="">
     </fieldset>
     <script src="styles.js"></script>

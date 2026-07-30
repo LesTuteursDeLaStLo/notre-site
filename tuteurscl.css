@@ -19,27 +19,6 @@ body {
     font-family: 'Courier New condensed', Courier, monospace;
     
 }
-#commentaires{
-     display: flex;
-    flex-direction: column;   /* Force chaque bloc de commentaire à aller à la ligne */
-    align-items: stretch;     /* Permet aux lignes d'occuper toute la largeur disponible */
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-#commentaire{
-    height:2in;
-    float:left;
-    display: flex;
-    flex-direction:column;
-    width:90%;
-    align-items : center;
-}
-textarea{
-    width:100%;
-    height:fit-content;
-      flex-grow: 1;
-}
 
 #wrap-content{
     width: 90%;
@@ -129,6 +108,30 @@ h1{
     margin-top:40px;
     margin-left: 0 !important;
     margin-right: 0 !important;
+}
+#revendications{
+    font-weight:bold;
+}
+#commentaires{
+     display: flex;
+    flex-direction: column;   /* Force chaque bloc de commentaire à aller à la ligne */
+    align-items: stretch;     /* Permet aux lignes d'occuper toute la largeur disponible */
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#commentaire{
+    height:2in;
+    float:left;
+    display: flex;
+    flex-direction:column;
+    width:90%;
+    align-items : center;
+}
+textarea{
+    width:100%;
+    height:fit-content;
+      flex-grow: 1;
 }
 
 .commentaire{
