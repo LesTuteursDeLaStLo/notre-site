@@ -51,11 +51,20 @@ table{
 #tabs td{
     width:auto;
     text-align: center;
+        position: relative;
+    z-index: 999999 !important;
+
     
+}
+#tabs{
+        position: relative;
+     z-index: 999999 !important;  
+
 }
 .tab{
     border:solid;
-      z-index: 999;  
+    position: relative;
+    z-index: 999999 !important;  
 
 }
 .actif{

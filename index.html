@@ -32,6 +32,23 @@
         </tr>
       </table>
     </nav>
+    <script> function changerTab(path, tab){
+  // 1. On sélectionne TOUS les éléments qui ont la classe "tab"
+  const tousLesOnglets = document.querySelectorAll('.tab');
+  
+  // 2. On utilise une boucle pour enlever la classe "actif" de chacun d'eux
+  tousLesOnglets.forEach((onglet) => {
+    onglet.classList.remove('actif');
+  });
+  
+  // 3. (Optionnel) Si vous restez sur la même page, on ajoute "actif" sur l'onglet cliqué
+  
+    tab.classList.add('actif');
+  
+
+  // 4. Redirection vers la nouvelle page
+  const iframe= document.getElementById("affichage-contenu");
+  iframe.src=path;}</script>
         </header>
 
         <div>
