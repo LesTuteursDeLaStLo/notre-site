@@ -55,6 +55,7 @@ table{
 }
 .tab{
     border:solid;
+      z-index: 999;  
 
 }
 .actif{
