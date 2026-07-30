@@ -90,22 +90,20 @@ if (bouton) {
 }
 */
 // On récupère Supabase depuis l'objet global du navigateur
-const { createClient } = window.supabase;
+// Récupération sécurisée du client Supabase
+const createClient = window.supabase.createClient;
 
-const URL = "https://supabase.co";
-const API = "sb_publishable_f-YKK4tPJK77y0tVI67urw_2o0ojeWj";
+const URL = 'https://apzwctvjunasumqbuyxi.supabase.co';
+const API = 'sb_publishable_f-YKK4tPJK77y0tVI67urw_2o0ojeWj';
 const supabaseClient = createClient(URL, API);
 
-// Fonction isolée pour charger les données
 async function chargerDonnees() {
   try {
-    // --- 1. Affichage des revendications ---
+    // --- 1. Gestion des revendications ---
     const listeRevendications = document.getElementById("revendications");
     if (listeRevendications) {
       const { data: Revendications, error: errorRev } = await supabaseClient.from('Revendications').select('*');
-      if (errorRev) {
-        console.error("Erreur Revendications :", errorRev.message);
-      } else if (Revendications) {
+      if (!errorRev && Revendications) {
         listeRevendications.innerHTML = "";
         Revendications.forEach((line) => {
           let element = document.createElement("li");
@@ -115,14 +113,13 @@ async function chargerDonnees() {
       }
     }
 
-    // --- 2. Affichage des commentaires ---
+    // --- 2. Gestion des commentaires ---
     const listeCommentaires = document.getElementById("commentaires");
     if (listeCommentaires) {
       const { data: Commentaires, error: errorComm } = await supabaseClient.from('Commentaires').select('*');
-      if (errorComm) {
-        console.error("Erreur Commentaires :", errorComm.message);
-      } else if (Commentaires) {
-        listeCommentaires.innerHTML = "";
+      
+      if (!errorComm && Commentaires) {
+        listeCommentaires.innerHTML = ""; // Vide la zone avant d'ajouter
         Commentaires.forEach((line) => {
           let section = document.createElement("section");
           let personne = document.createElement("table");
@@ -151,11 +148,11 @@ async function chargerDonnees() {
       }
     }
   } catch (err) {
-    console.error("Erreur globale de chargement :", err);
+    console.error("Erreur de chargement :", err);
   }
 }
 
-// --- 3. Publication de commentaire ---
+// Fonction d'envoi de commentaire
 async function PostComment() {
   const pseudonyme = document.getElementById("pseudo");
   const faculte = document.getElementById("faculte");
@@ -170,19 +167,15 @@ async function PostComment() {
     .from('Commentaires')
     .insert([{ pseudonyme: pseudo, faculte: fac, commentaire: commentaire.value }]);
 
-  if (errorPosting) {
-    console.error("Erreur insertion :", errorPosting.message);
-    alert("Impossible d'envoyer le commentaire.");
-  } else {
+  if (!errorPosting) {
     commentaire.value = "";
-    chargerDonnees(); // Recharge la liste sans rafraîchir la page
+    chargerDonnees();
   }
 }
 
-// --- 4. Initialisation des boutons au chargement complet ---
+// Lancement au chargement propre du DOM
 document.addEventListener("DOMContentLoaded", () => {
   chargerDonnees();
-
   const bouton = document.getElementById("btn-publier");
   if (bouton) {
     bouton.addEventListener("click", PostComment);
