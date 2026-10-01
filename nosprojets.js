@@ -20,7 +20,7 @@ async function loadImages() {
           listeImages.appendChild(element);
         });
       }
-    }catch (err) {
+    }}catch (err) {
     console.error("Erreur lors du chargement :", err);
   }
 }
@@ -50,11 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (bouton) {
     bouton.addEventListener("click", submitImage);
     
-     const iframeParente = window.parent.document.getElementById("images");
+   //  const iframeParente = window.parent.document.getElementById("images");
     
    
       // On lui transmet la hauteur exacte du contenu bien réel et chargé
-      iframeParente.style.height = document.documentElement.scrollHeight + 'px';
+    //  iframeParente.style.height = document.documentElement.scrollHeight + 'px';
   }
 });
 
