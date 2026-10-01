@@ -1,14 +1,12 @@
 
+
 const supabaseClient = window.supabase.createClient(
-  'https://apzwctvjunasumqbuyxi.supabase.co/', 
+  'https://supabase.co', 
   'sb_publishable_f-YKK4tPJK77y0tVI67urw_2o0ojeWj'
 );
 
-
-
 async function loadImages() {
   try {
-    // --- 1. Gestion des revendications ---
     const listeImages = document.getElementById("images");
     if (listeImages) {
       const { data: images, error: errorImage } = await supabaseClient.from('images').select('*');
@@ -20,11 +18,13 @@ async function loadImages() {
           listeImages.appendChild(element);
         });
       }
-    }
-  }catch (err) {
+    } // Une seule accolade ici pour fermer le "if (listeImages)"
+  } catch (err) { // L'accolade juste avant le catch ferme correctement le "try"
     console.error("Erreur lors du chargement :", err);
   }
-}
+} // Cette accolade ferme la fonction loadImages
+
+
   
 
 // Fonction d'envoi de commentaire
