@@ -10,9 +10,9 @@ async function LoadImages() {
   try {
     // --- 1. Gestion des revendications ---
     const listeImages = document.getElementById("images");
-    if (images) {
+    if (listeImages) {
       const { data: images, error: errorImage } = await supabaseClient.from('images').select('*');
-      if (!errorRev && images) {
+      if (!errorImage && images) {
         listeImages.innerHTML = "";
         images.forEach((line) => {
           let element = document.createElement("img");
@@ -29,14 +29,14 @@ async function submitImage() {
   const url = document.getElementById("url");
 
 
-  if (!url || commentaire.value.trim() === "") return;
+  if (!url || url.value.trim() === "") return;
 
   const { error: errorPosting } = await supabaseClient
     .from('images')
     .insert([{ image_url: url.value }]);
 
   if (!errorPosting) {
-    commentaire.value = "";
+    url.value = "";
     loadImages();
   }
 }
