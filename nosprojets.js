@@ -20,7 +20,8 @@ async function loadImages() {
           listeImages.appendChild(element);
         });
       }
-    }}catch (err) {
+    }
+  }catch (err) {
     console.error("Erreur lors du chargement :", err);
   }
 }
