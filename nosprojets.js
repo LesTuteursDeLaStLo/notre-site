@@ -6,7 +6,7 @@ const supabaseClient = window.supabase.createClient(
 
 
 
-async function LoadImages() {
+async function loadImages() {
   try {
     // --- 1. Gestion des revendications ---
     const listeImages = document.getElementById("images");
@@ -21,7 +21,8 @@ async function LoadImages() {
         });
       }
     }
-
+  }
+}
   
 
 // Fonction d'envoi de commentaire
