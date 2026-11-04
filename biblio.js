@@ -1,5 +1,12 @@
-async function chargerDonnees() {
+const supabaseClient = window.supabase.createClient(
+  'https://apzwctvjunasumqbuyxi.supabase.co/', 
+  'sb_publishable_f-YKK4tPJK77y0tVI67urw_2o0ojeWj'
+);
 
+
+
+async function chargerDonnees() {
+try{
     // --- 1. Gestion des revendications ---
     const Livres = document.getElementById("catalogue");
     if (Livres) {
@@ -11,5 +18,7 @@ async function chargerDonnees() {
           element.textContent = line.Auteurs + "," + line.AnnéeEcriture + "," + line.Titre + "," + line.Collection +","+ line.AnnéePublication + "," + "Emprunté: " + line.Status + "," + "Exemplaire rare: "+ line.Rare;
           catalogue.appendChild(element);
         });
-      }
-    }}
+      }}
+    } catch (err) {
+    console.error("Erreur de chargement :", err);
+  }}
