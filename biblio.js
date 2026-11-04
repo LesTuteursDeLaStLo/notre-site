@@ -1,0 +1,15 @@
+async function chargerDonnees() {
+
+    // --- 1. Gestion des revendications ---
+    const Livres = document.getElementById("catalogue");
+    if (Livres) {
+      const { data: catalogue, error: errorBook } = await supabaseClient.from('CATALOGUE').select('*');
+      if (!errorBook && catalogue) {
+        Livres.innerHTML = "";
+        catalogue.forEach((line) => {
+          let element = document.createElement("li");
+          element.textContent = line.Auteurs + "," + line.AnnéeEcriture + "," + line.Titre + "," + line.Collection +","+ line.AnnéePublication + "," + "Emprunté: " + line.Status + "," + "Exemplaire rare: "+ line.Rare;
+          catalogue.appendChild(element);
+        });
+      }
+    }}
