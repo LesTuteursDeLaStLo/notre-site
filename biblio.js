@@ -7,6 +7,7 @@ const supabaseClient = window.supabase.createClient(
 
 async function chargerDonnees() {
 try{
+  console.log("run");
     // --- 1. Gestion des revendications ---
     const Livres = document.getElementById("catalogue");
     if (Livres) {
