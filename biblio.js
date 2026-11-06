@@ -17,7 +17,7 @@ try{
         catalogue.forEach((line) => {
           let element = document.createElement("li");
           element.textContent = line.Auteurs + "," + line.AnnéeEcriture + "," + line.Titre + "," + line.Collection +","+ line.AnnéePublication + "," + "Emprunté: " + line.Status + "," + "Exemplaire rare: "+ line.Rare;
-          catalogue.appendChild(element);
+          Livres.appendChild(element);
         });
       }}
     } catch (err) {
