@@ -23,3 +23,8 @@ try{
     } catch (err) {
     console.error("Erreur de chargement :", err);
   }}
+
+
+
+
+document.addEventListener("DOMContentLoaded", chargerDonnees);
