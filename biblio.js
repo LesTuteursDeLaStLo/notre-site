@@ -12,6 +12,7 @@ try{
     const Livres = document.getElementById("catalogue");
     if (Livres) {
       const { data: catalogue, error: errorBook } = await supabaseClient.from('CATALOGUE').select('*');
+      console.log("Données reçues de Supabase :", catalogue, "Erreur :", errorBook);
       if (!errorBook && catalogue) {
         Livres.innerHTML = "";
         catalogue.forEach((line) => {
